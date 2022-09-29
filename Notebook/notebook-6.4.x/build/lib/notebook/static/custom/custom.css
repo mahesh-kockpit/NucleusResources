@@ -1,0 +1,38 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file
+*/
+
+.add_new_cell {
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 2%;
+    
+  }
+  
+  /* .btnaddcell {
+    background: #e8e8e8;
+    display: inline-block;
+    margin-left: 60px;
+    background-color: yellow;
+  } */
+
+  #btnaddcell {
+    
+    background: rebeccapurple;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#btnrmvcell {
+    
+    /* background: grey; */
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
