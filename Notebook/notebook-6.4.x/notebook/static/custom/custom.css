@@ -1,0 +1,52 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file
+*/
+
+
+
+
+
+.code_cell:hover .cell_controls {
+  display: block; /* On :hover of div show button */
+}
+
+.cell_controls{
+  
+  display: none;
+}
+
+
+.add_new_cell {
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 2%;
+    
+  }
+  
+  /* .btnaddcell {
+    background: #e8e8e8;
+    display: inline-block;
+    margin-left: 60px;
+    background-color: yellow;
+  } */
+
+  #btnaddcell {
+    
+    background: rgb(226, 225, 225);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#btnrmvcell {
+    
+  background: rgb(226, 225, 225);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
+}

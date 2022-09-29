@@ -1,0 +1,426 @@
+<div id="kockpitDivDialog">
+    <div class="tab">
+      <input type="text" id="Menu-Search" class="form-control" placeholder="Search"/>
+      <ul class="nav nav-list" id="Menu">
+          <li>
+            <label class="tree-toggler nav-header"><a href="#">Add Column</a></label>
+              <ul class="nav nav-list tree" style="display: none;padding-left: 20px;">
+                  <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'columnadd-Conditional')">Conditional</a></label></li>
+                  <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'columnadd-Expression')">Expression</a></label></li>
+                  <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'columnadd-Constant')">Constant</a></label></li>
+                  <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'columnadd-Composite')">Composite</a></label></li>
+              </ul>
+          </li>
+          <!-- <li class="divider"></li> -->
+          <li><label class="nav-header"><a href="#" class="tablinks active" onclick="openTab(event, 'Join')">Join</a></label></li>
+          <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'GroupBy')">GroupBy</a></label></li>
+          <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'Drop')">Drop</a></label></li>
+          <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'Concatenate')">Concatenate</a></label></li>
+          <li><label class="nav-header"><a href="#" class="tablinks" onclick="openTab(event, 'SqlReadWrite')">Sql Read Write</a></label></li>
+        </ul>
+    </div>
+
+    <div class="tabcontent" id="main-content">
+
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="columnadd-Conditional" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="columnadd-Conditional-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                  <label>New Column</label>
+                  <input id="columnadd-Conditional-ctlNewColumn" class="form-control" type="text"/>
+              </td>
+                <td>
+                    <label>Data Frame</label>
+                    <select id="columnadd-Conditional-selDF" class="form-control Join-selDF1">
+                       
+                    </select>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="columnadd-Expression" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="columnadd-Expression-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                  <label>New Column</label>
+                  <input id="columnadd-Expression-ctlNewColumn" class="form-control" type="text"/>
+              </td>
+                <td>
+                    <label>Data Frame</label>
+                    <select id="columnadd-Expression-selDF" class="form-control Join-selDF1">
+                       
+                    </select>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="columnadd-Constant" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="columnadd-Constant-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                  <label>New Column</label>
+                  <input id="columnadd-Constant-ctlNewColumn" class="form-control" type="text"/>
+              </td>
+                <td>
+                    <label>Data Frame</label>
+                    <select id="columnadd-Constant-selDF" class="form-control Join-selDF1">
+                      
+                    </select>
+                </td>
+                <td>
+                  <label>Constant</label>
+                  <input id="columnadd-Constant-ctlConstant" class="form-control" type="text"/>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="columnadd-Composite" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="columnadd-Composite-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                  <label>New Column</label>
+                  <input id="columnadd-Composite-ctlNewColumn" class="form-control" type="text"/>
+              </td>
+                <td>
+                    <label>Data Frame</label>
+                    <select id="columnadd-Composite-selDF" class="form-control Join-selDF1">
+                        
+                    </select>
+                </td>
+                <td>
+                  <div class="multiselect">
+                    <label>Column</label>
+                    <div class="selectBox" onclick="showCheckboxes('columnadd-Composite-Column')">
+                        <select class="form-control selectBoxOptn">
+                            <option id="columnadd-Composite-Column-title" value="">[Select]</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="columnadd-Composite-Column" class="dropdown-content">
+                        <input type="text" id="columnadd-Composite-Column-Search" class="form-control colSearch" placeholder="Search"/>
+                        <ul id="columnadd-Composite-Column-UlColumn">
+                          <!-- <li><label><input type="checkbox" value="1" onclick="CountValue('columnadd-Composite-Column','columnadd-Composite-Column-title')"/> Column1</label></li>
+                          <li><label><input type="checkbox" value="2" onclick="CountValue('columnadd-Composite-Column','columnadd-Composite-Column-title')"/> Column2</label></li>
+                          <li><label><input type="checkbox" value="3" onclick="CountValue('columnadd-Composite-Column','columnadd-Composite-Column-title')"/> Column3</label></li>
+                          <li><label><input type="checkbox" value="4" onclick="CountValue('columnadd-Composite-Column','columnadd-Composite-Column-title')"/> Column4</label></li>
+                          <li><label><input type="checkbox" value="5" /> Column5</label></li> -->
+                        </ul>
+                    </div>
+                </div>
+              </td>
+              <td>
+                <label>Seperator</label>
+                <select id="columnadd-Composite-selSeperator" class="form-control">
+                    <option value="&&">&&</option>
+                    <option value="||">||</option>
+                </select>
+            </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+        
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="Join">
+        <div class="col-12">
+          <table class="table table-sm">
+              <tr>
+                  <td>
+                      <label>New Data Frame</label>
+                      <input id="Join-ctlNewDF" class="form-control Join-ctlNewDF" type="text"/>
+                  </td>
+                  <td>
+                      <label>Data Frame 1</label>
+                      <select id="Join-selDF1" class="form-control Join-selDF1">
+                         
+                      </select>
+                  </td>
+                  <td>
+                      <label>Data Frame 2</label>
+                      <select id="Join-selDF2"  class="form-control Join-selDF2">
+                      </select>
+                  </td>
+                  <td>
+                    <label>How</label><br/>
+                    <select id="Join-selHow" class="form-control">                        
+                        <option value="INNER">INNER</option>
+                        <option value="LEFT">LEFT</option>
+                        <option value="RIGHT">RIGHT</option>
+                        <option value="FULL">FULL</option>
+                        <option value="CROSS">CROSS</option>
+                    </select>
+                  </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+  
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="Drop" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="Drop-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                    <label>Drop Data Frame</label>
+                    <select id="Drop-selDropDF" class="form-control Join-selDF1">
+                       
+                    </select>
+                </td>
+                <td>
+                    <div class="multiselect">
+                        <label>Drop Column</label>
+                        <div class="selectBox" onclick="showCheckboxes('Drop-Column')" >
+                            <select class="form-control selectBoxOptn">
+                                <option id="Drop-Column-title" value="">[Select]</option>
+                            </select>
+                            <div class="overSelect"></div>
+                        </div>
+                        <div id="Drop-Column" class="dropdown-content">
+                            <input type="text" id="Drop-Column-Search" class="form-control colSearch" placeholder="Search"/>
+                            <ul id="Drop-Column-DropColumn">
+                              <!-- <li><label><input type="checkbox" value="1" onclick="CountValue('Drop-Column','Drop-Column-title')"/> Column1</label></li>
+                              <li><label><input type="checkbox" value="2" onclick="CountValue('Drop-Column','Drop-Column-title')"/> Column2</label></li>
+                              <li><label><input type="checkbox" value="3" onclick="CountValue('Drop-Column','Drop-Column-title')"/> Column3</label></li>
+                              <li><label><input type="checkbox" value="4" onclick="CountValue('Drop-Column','Drop-Column-title')"/> Column4</label></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </td>                
+            </tr>
+          </table>
+        </div>
+      </div>
+  
+      <div class="row form-group tabdata" id="GroupBy" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>New Data Frame</label>
+                    <input id="GroupBy-ctlNewDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                    <label>GB Data Frame</label>
+                    <select id="GroupBy-ctlDF" class="form-control Join-selDF1">
+                        
+                    </select>
+                </td>
+                <td>
+                    <div class="multiselect">
+                        <label>GB Column</label>
+                        <div class="selectBox" onclick="showCheckboxes('GroupBy-GBColumn')">
+                            <select class="form-control selectBoxOptn">
+                                <option id="GroupBy-GBColumn-title" data-expand="0">[Select]</option>
+                            </select>
+                            <div class="overSelect"></div>
+                        </div>
+                        <div id="GroupBy-GBColumn" class="dropdown-content">
+                          <input type="text" id="GroupBy-Column-Search" class="form-control colSearch" placeholder="Search"/>
+                            <ul id="GroupBy-GBColumn-UlColumn">
+                                <!-- <li><label><input type="checkbox" value="1" onclick="CountValue('GroupBy-GBColumn','GroupBy-GBColumn-title')"/> Column1</label></li>
+                                <li><label><input type="checkbox" value="2" onclick="CountValue('GroupBy-GBColumn','GroupBy-GBColumn-title')"/> Column2</label></li>
+                                <li><label><input type="checkbox" value="3" onclick="CountValue('GroupBy-GBColumn','GroupBy-GBColumn-title')"/> Column3</label></li>
+                                <li><label><input type="checkbox" value="4" onclick="CountValue('GroupBy-GBColumn','GroupBy-GBColumn-title')"/> Column4</label></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+              <table class="table table-sm" id="GroupBy-tblAggregate">
+                <thead>
+                  <tr>
+				  <td>
+                      <label>Aggregate Type</label>
+                      <select id="GroupBy-AggregateType" class="form-control">
+                        <option value="sum">Sum</option>
+                        <option value="count">Count</option>
+                        <option value="min">Min</option>
+                        <option value="max">Max</option>
+                        <option value="avg">Avg</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label>Aggregate Column</label>
+                      <select id="GroupBy-AggregateColumn" class="form-control">                        
+                      </select>
+                    </td>                    
+                    <td>
+                        <label>New Column Name</label>
+                        <input id="GroupBy-NewColumnName" class="form-control" type="text"/>
+                    </td>
+                    <td>
+                      <br/>
+                      <button type="button" id="GroupBy-tblAggregate-Add" style="margin-top:5px ;" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></button>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody id="GroupBy-tblAggregate-tbody"></tbody>
+              </table>
+            </tr>
+          </table>
+        </div>
+      </div>
+  
+      <!-- Completed -->
+      <div class="row form-group tabdata" id="Concatenate" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+            <tr>
+                <td>
+                    <label>Result Data Frame</label>
+                    <input id="Concatenate-ctlRDF" class="form-control" type="text"/>
+                </td>
+                <td>
+                    <label>Data Frame 1</label>
+                    <select id="Concatenate-selDF1" class="form-control Join-selDF1">
+                        
+                    </select>
+                </td>
+                <td>
+                    <label>Data Frame 2</label>
+                    <select id="Concatenate-selDF2" class="form-control Join-selDF2">
+                      
+                    </select>
+                </td>
+                <td>
+                  <label>Union</label>
+                  <select id="Concatenate-selUnion" class="form-control">
+                    <option value="union">union</option>
+                    <option value="unionByName">unionByName</option>
+                  </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed Sql -->
+      <div class="row form-group tabdata" id="SqlReadWrite" style="display: none;">
+        <div class="col-12">
+          <table class="table table-sm">
+              <tr>
+                <td>
+                  <label>Type</label>
+                  <div>
+                    <input type="radio" id="Write"  name="drone" value="write"
+                           checked>
+                    <label for="huey">Write</label>
+                    <input type="radio" id="Read" name="drone" value="read">
+                    <label for="dewey">Read</label>                      
+                  </div>
+                  
+                  <!-- <label>Mode</label>
+                  <input id="ctlNewMode" class="form-control" type="text"/> -->
+                </td>
+                <td class="_dvsqlwrite" style="display: '';">
+                      <label>Data Base</label>
+                      <select id="selDB" class="form-control _selDB">
+                          <option value="">[Select]</option>
+                          
+                      </select>
+                </td>
+                <td class="_dvsqlwrite schema" style="display:none;">
+                  <label>Data Base Schema</label>
+                  <select id="selSchema" class="form-control ">
+                      <option value="">[Select]</option>
+                      
+                  </select>
+            </td>
+                <td class="_dvsqlwrite" style="display: '';">
+                      <label>Data Frame</label>
+                      <select id="ctlNewDF"  class="form-control Join-selDF1">
+                          <option value="">[Select]</option>
+                      </select>
+                </td>
+                <td class="_dvsqlwrite" style="display: '';">
+                    <label>Table Name</label>
+                    <input id="selTB" class="form-control" type="text"/>
+                  </td>
+                  <td id="_mode" class="_dvsqlwrite" style="display:''">
+                    <label>Mode</label>
+                    <select id="selmode" class="form-control">
+                        <option value="overwrite">Overwrite</option>
+                        <option value="append">Append</option>                        
+                    </select>
+                </td>
+                <td class="_dvsqlread" style="display: none;">
+                    <label>Data Base</label>
+                    <select id="_readselDB" class="form-control _selDB">
+                        
+                    </select>
+                </td>
+                <td class="_dvsqlread" style="display: none;">
+                    <label>Table Name</label>
+                    <select id="_readselTB"  class="form-control _selTB">
+                        
+                    </select>
+                </td>
+                <td class="_dvsqlread" style="display: none;">
+                  <label>Data Frame</label>
+                  <input id="_readctlNewDF" class="form-control" type="text"/>
+                </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+  
+            
+
+      <!-- Result  -->
+      <div class="row form-group">
+        <div class="col-12">
+          <label class="text-info"><i>Output</i></label>
+          <textarea id="ctlResult" type="text"  class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="row form-group " id="txtsample">
+        <div class="col-12">
+          <label class="text-info"><i>Sample</i></label>
+          <textarea id="ctlSample" type="text" class="form-control" readonly="true" disabled="true"></textarea>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<div class="modal fade" id="QsloadingModal" tabindex="-1" role="dialog" aria-labelledby="loader" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog" style="width:50px;padding-top: 15%;">
+    <div class="modal-content text-center">
+      <img src="http://i.stack.imgur.com/FhHRx.gif" />    
+    </div>
+  </div>
+</div>
